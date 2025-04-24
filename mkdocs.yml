@@ -7,6 +7,8 @@ site_url: https://byteroad.github.io/ogcapi-user/
 
 nav:
   - Início: index.md
+  - Descrição do Sistema: descricao.md
+  - Acesso desde o QGIS: clientes.md
   - Perguntas Frequentes: perguntas.md
   - Referências e Recursos de Aprendizagem: recursos.md
   - Contribuir para este Manual: contribuir.md
