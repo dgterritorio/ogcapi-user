@@ -13,6 +13,8 @@ Esta secção compila as referências e recursos de aprendizagem externos, refer
 
 ogc api workshop
 
+training emotional cities
+
 * [Ubuntu Desktop Guide](https://help.ubuntu.com/24.10/ubuntu-help/index.html)
 * [Ubuntu tutorials](https://ubuntu.com/tutorials)
 * [Linux Journey](https://linuxjourney.com/)

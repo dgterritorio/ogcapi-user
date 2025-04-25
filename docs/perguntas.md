@@ -1,5 +1,7 @@
 # Perguntas Frequentes
 
+multlingual
+
 Esta secção compila alguns problemas comuns que podem surgir, e as soluções identificadas. Caso identifiquem outros problemas/soluções que mereçam a pena ser adicionados ou actualizados, podem contribuir utilizando os mecanismos identificados [nesta secção](./contribuir.md).
 
 !!! question

@@ -15,7 +15,6 @@ Estas normas promovem a interoperabilidade, a escalabilidade e a segurança, fac
 
 Assim, a Direção-Geral do Território (DGT) está a criar uma plataforma, que permite disponibilizar os dados geográficos registados no SNIG e com políticas de dados abertas, através de OGC API.
 
-TODO: link para a arquitectura
 
 ## Acesso
 
@@ -74,6 +73,10 @@ O [Cadastro Predial](https://ogcapi.dgterritorio.gov.pt/collections/cadastro), a
 !!! info
     
     [OGC API - Tiles](https://tiles.developer.ogc.org/) pode ser considerado um upgrade ao Standard OGC Web Map Tile Service (WMTS), permitindo criar mapas interactivos na web, que funcionam de uma forma eficiente.
+
+    A imagem abaixo mostra um exemplo de uma aplicação de web que produz um mapa interactivo do tema "crus", a partir de um endpoint de OGC AP - Tiles. O código completo pode ser consultado [aqui](https://github.com/emotional-cities/vtiles-example.git).
+
+    ![Aplicação de web com vector tiles](img/vtiles-dgt.png)
 
 
 Os temas CRUS e COS foram sub divididos em sub-temas, com base no municipio, resultando em 278 colecções cada.
