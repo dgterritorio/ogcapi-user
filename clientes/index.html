@@ -95,9 +95,56 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="acesso-desde-o-qgis">Acesso desde o QGIS</h1>
+<p>Esta secção ilustra como aceder a dados publicados em OGC API, através da aplicação cliente <a href="https://qgis.org/">QGIS</a>.</p>
+<p>A lista de clientes que podem aceder a dados publicados em OGC API pode ser consultada nos repositórios de GitHub de cada Standard (por exemplo, <a href="https://github.com/opengeospatial/ogcapi-features/tree/master/implementations/clients">OGC API - Features</a>) e inclui aplicações como LeafLet, OpenLayers, GDAL ou ArcGIS.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Para as demonstrações abaixo, foi usada a LTR do QGIS, que no momento em que este manual foi escrito é a 3.40.6. Mais detalhes podem ser consultados na tabela abaixo:</p>
+<p><table width='100%' align='center'><tr><td>QGIS version</td><td>3.40.6-Bratislava</td></tr><tr><td>QGIS code revision</td><td><a href="https://github.com/qgis/QGIS/commit/5d7f6a3e265">5d7f6a3e265</a></td></tr><tr><td colspan="2">&nbsp;</td></tr><tr><td colspan="2"><b>Libraries</b></td></tr><tr><td>Qt version</td><td>5.15.13</td></tr><tr><td>Python version</td><td>3.12.3</td></tr><tr><td>GDAL version</td><td>3.8.4</td></tr><tr><td>PROJ version</td><td>9.4.0</td></tr><tr><td>EPSG Registry database version</td><td>v11.004 (2024-02-24)</td></tr><tr><td>GEOS version</td><td>3.12.1-CAPI-1.18.1</td></tr><tr><td>SQLite version</td><td>3.45.1</td></tr><tr><td>PostgreSQL client version</td><td>16.8 (Ubuntu 16.8-0ubuntu0.24.04.1)</td></tr><tr><td>SpatiaLite version</td><td>5.1.0</td></td></tr><tr><td>QWT version</td><td>6.1.4</td></tr><tr><td>QScintilla2 version</td><td>2.14.1</td></tr><tr><td>OS version</td><td>Ubuntu 24.04.2 LTS</td></tr><tr><td colspan="2">&nbsp;</td></tr></table></p>
+</div>
 <h2 id="ogc-api-features">OGC API - Features</h2>
+<p>Para adicionar um layer do tipo "OGC API - Features", pode ser utilizado o browser do lado esquerdo, carregando no item "WFS/OGC API - Features" para chamar o context menu, e escolhendo "Nova Ligação". </p>
+<p><img alt="OAF 1" src="../img/oaf1.png" /></p>
+<p>No passo seguinte, é aberta uma caixa de configuração para introduzir os dados da ligação. Na secção <code>url</code> deve ser introduzido o url da Landing Page da OGC API: <a href="https://ogcapi.dgterritorio.gov.pt/">https://ogcapi.dgterritorio.gov.pt/</a>. As opcões de WFS são facultativas.</p>
+<p><img alt="OAF 2" src="../img/oaf2.png" /></p>
+<p>Ao pressionar <code>ok</code> para fechar a caixa anterior, uma nova ligação aparecerá listada debaixo da secção "WFS/OGC API - Features", no browser panel. Ao carregar nesse item para expandir-lo irão aparecer todas as colecções de OGC API - Features, disponíveis no servidor.</p>
+<p><img alt="OAF 6" src="../img/oaf6.png" /></p>
+<p>Qualquer uma destas colecções pode ser adicionada ao QGIS como layer, fazendo duplo click, ou carregando nela para chamar o menu de contexto e escolhendo "Add layer to project".</p>
+<p><img alt="OAF 4" src="../img/oaf4.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As colecções OGC API - Features também podem ser adicionadas através do top menu "Layer", escolhendo "Add Layer" e "Add WFS/OGC API - Features Layer".</p>
+<p><img alt="OAF 5" src="../img/oaf5.png" /></p>
+</div>
 <h2 id="ogc-api-tiles">OGC API - Tiles</h2>
+<p>O QGIS permite adicionar tiles vectoriais com o formato OGC API - Tiles. No browser panel do lado esquerdo, carregar no item "Vector Tiles" para chamar o context menu e seleccionar "New generic connection".</p>
+<p><img alt="OAT 3" src="../img/oat3.png" /></p>
+<p>Na caixa de configuração deve-se indicar qual é o "source url" da colecção.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para obter "source url" da colecção pode-se consultar o endpoint de tileset metadata. Depois de identificar a colecção de interesse, através do <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">endpoint de colecções</a>, carregar nessa colecção para obter a página da colecção. Por exemplo, se quiseremos os metadados de colecção de "CRUS ABRANTES", podemos carregar nesse link que nos leva até: <a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes">https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes</a>. A última parte do url - <code>crus_abrantes</code>- é o nome da colecção.</p>
+<p>Para aceder ao tileset metadata, podemos substituir o <code>NOME</code> neste url, por <code>crus_abrantes</code>:</p>
+<p><a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/tiles/WebMercatorQuad/metadata">https://ogcapi.dgterritorio.gov.pt/collections/NOME/tiles/WebMercatorQuad/metadata</a></p>
+<p><img alt="OAT 3" src="../img/oat3.png" /></p>
+<p>Acedendo a url podemos consultar o Tile URL template. </p>
+<p><img alt="OAT 1" src="../img/oat1.png" /></p>
+<p>Podemos copiar este valor para o "source url" do QGIS, substituindo <code>tileMatrix</code> por <code>z</code>, <code>tileRow</code> por <code>y</code> e <code>tileCol</code> por <code>x</code>: </p>
+<p><img alt="OAT 2" src="../img/oat2.png" /></p>
+</div>
+<p>Depois de aceitar esta configuração, a colecção irá aparecer listada debaixo do item "Vector Tiles". Ela pode ser adicionada ao mapa, carregando para obter o context menu, e depois seleccionando "Add layer to project".</p>
+<p><img alt="OAT 4" src="../img/oat4.png" /></p>
 <h2 id="ogc-api-maps">OGC API - Maps</h2>
+<p>A infraestrutura OGC API da DGT disponibiliza duas colecções como OGC API - Maps:
+"OrtoSat 30 cm - Portugal Continental - 2023": Cor Verdadeira e Cor Falsa. Para acceder a qualquer uma destas colecções, começamos por identificar o endpoint da colecção através do <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">endpoint de colecções</a>. Por exemplo para o tema "Cor Verdadeira":</p>
+<ul>
+<li><a href="https://ogcapi.dgterritorio.gov.pt/collections/ortos-rgb">https://ogcapi.dgterritorio.gov.pt/collections/ortos-rgb</a></li>
+</ul>
+<p>Através do menu "Layer", seleccionar a opção "Add Layer" e "Add Raster Layer".</p>
+<p><img alt="OAM 1" src="../img/oam1.png" /></p>
+<p>Na caixa de configuração, seleccionar o radio button "OGC API", que irá expandir um menu com opções de configuração.</p>
+<p><img alt="OAM 2" src="../img/oam2.png" /></p>
+<p>Na secção "OGC API - endpoint", deve-se preencher o url da colecção que identificámos acima e na <code>API</code>, escolher <code>map</code>. Todas as outras configurações são opcionais. Depois de aceitar esta configuração, a colecção será adicionada ao mapa.</p>
+<p><img alt="OAM 3" src="../img/oam3.png" /></p>
               
             </div>
           </div><footer>

@@ -99,6 +99,10 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="descricao">Descrição</h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As descrições de funcionalidade dos Standards OGC apresentadas nesta secção cobrem apenas alguns aspectos e não dispensam a leitura completa dos Standards aqui referidos: OGC API - Common, OGC API Features e OGC API - Tiles. Os links para esses documentos podem ser encontrados directamente no texto, ou na secção <a href="../recursos/#ogc-api">Referências e Recursos de Aprendizagem</a> </p>
+</div>
 <h2 id="introducao">Introdução</h2>
 <p>A disponibilização e reutilização dos dados abertos, conforme estabelecido na Diretiva (UE) 2019/1024 do Parlamento Europeu e do Conselho, exige a adoção de novos procedimentos nomeadamente a nível da disponibilização e reutilização da informação do sector público.</p>
 <p>Os dados geográficos abertos devem ser disponibilizados gratuitamente, em formato legível por máquinas e por meio de Interfaces de Programação de Aplicações (IPA/API).
@@ -118,10 +122,9 @@ A <a href="https://www.ogc.org/">Open Geospatial Consortium</a> (OGC) tem vindo 
 <ul>
 <li><a href="https://ogcapi.dgterritorio.gov.pt/collections">https://ogcapi.dgterritorio.gov.pt/collections</a>: <em>Collections</em>, lista de colecções publicadas neste serviço.</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>No <em>OGC API - Common - Part 2: Geospatial Data Standard</em> podemos encontrar uma definição de colecções.</p>
-<p><em>"Geospatial resources are typically packaged into sets or collections of related resources. A single API may provide access to a large number of collections. This API-GeoData standard provides a means of organizing these collections and defines operations for the discovery and selection of individual collections."</em></p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>"Geospatial resources are typically packaged into sets or collections of related resources. A single API may provide access to a large number of collections. This API-GeoData standard provides a means of organizing these collections and defines operations for the discovery and selection of individual collections." (OGC API - Common - Part 2: Geospatial Data Standard)</p>
 </div>
 <h2 id="formatos-da-resposta">Formatos da Resposta</h2>
 <p>Os Standards OGC API oferecem diferentes formatos através de um mecanismo de <a href="https://en.wikipedia.org/wiki/Content_negotiation">negociação de conteúdos</a>. Desta forma, uma API poderá obter uma resposta em formato JSON, enquanto que um browser poderá obter uma resposta em formato HTML. A representação alternativa dos endpoints em formato HTML é apenas uma conveniência e não deve ser considerada um substituto de uma aplicação cliente, que é a forma recomendada de aceder aos endpoints. Na secção  <a href="../clientes/">Acesso desde o QGIS</a> é apresentado um exemplo de como aceder ao serviço usando uma aplicação cliente (QGIS). </p>
@@ -134,19 +137,37 @@ A <a href="https://www.ogc.org/">Open Geospatial Consortium</a> (OGC) tem vindo 
 <p>Este padrão é válido para todos os endpoints da OGC API.</p>
 </div>
 <h2 id="coleccoes-publicadas">Colecções Publicadas</h2>
-<p>A DGT disponibliza X colecções em OGC API. TODO: add links das colecoes</p>
-<p>As colecções "OrtoSat 30 cm - Portugal Continental - 2023" (Cor Verdadeira e Cor Falsa) estão publicadas como OGC API - Maps. TODO: describe maps</p>
-<p>O Cadastro Predial, a Carta do Regime de Uso do Solo (CRUS), a Carta de Uso e Ocupação do Solo (COS) e a Carta Administrativa Oficial de Portugal (CAOP) estão publicadas como OGC API - Features e OGC API - Tiles. TODO: describe features and tiles</p>
-<p>Os temas CRUS e COS foram sub divididos em sub-temas, com base no municipio, resultando em X colecções cada.</p>
-<p>A CAOP está dividida em 8 colecções, uma para cada unidade admninistrativa (Municípios, Freguesias, Áreas administrativas, NUTSI, NUTSII, NUTSIII, Troços, Distritos).</p>
-<p>De acordo com <em>OGC API - Common - Part 2</em> o endpoint de <em>collection</em> (colecção) contém toda a informação necessária sobre essa colecção, incluindo os links para aceder aos dados. Por exemplo, para obter os metadados de colecção da colecção <code>crus_abrantes</code>: </p>
+<p>A DGT disponibliza 569 colecções em OGC API.</p>
+<p>As colecções "OrtoSat 30 cm - Portugal Continental - 2023" (<a href="https://ogcapi.dgterritorio.gov.pt/collections/ortos-rgb">Cor Verdadeira</a> e <a href="https://ogcapi.dgterritorio.gov.pt/collections/ortos-irg">Cor Falsa</a>) estão publicadas como <a href="https://docs.ogc.org/is/20-058/20-058.html">OGC API - Maps</a>. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>OGC API - Maps segue as pegadas do Web Map Service (WMS) da OGC, possibilitando ás aplicações clientes pedir mapas com informação geospacial na web, usando parâmetros específicos (bounding box, crs, etc).</p>
+</div>
+<p>O <a href="https://ogcapi.dgterritorio.gov.pt/collections/cadastro">Cadastro Predial</a>, a <a href="https://ogcapi.dgterritorio.gov.pt/collections/crus">Carta do Regime de Uso do Solo (CRUS)</a>, a <a href="https://ogcapi.dgterritorio.gov.pt/collections/cos">Carta de Uso e Ocupação do Solo (COS)</a> e a Carta Administrativa Oficial de Portugal (CAOP) estão publicadas como <a href="https://github.com/opengeospatial/ogcapi-features">OGC API - Features</a> e <a href="https://github.com/opengeospatial/ogcapi-tiles">OGC API - Tiles</a>. As tiles disponibilizadas são vectoriais usando o formato <a href="https://github.com/mapbox/vector-tile-spec">Vector Tile da Mapbox</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><a href="https://features.developer.ogc.org/">OGC API - Features</a> permite interrogar dados vectoriais na web, independentemente da forma como estes estão armazenados (ficheiro, base de dados SQL, base de dados NoSQL).</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><a href="https://tiles.developer.ogc.org/">OGC API - Tiles</a> pode ser considerado um upgrade ao Standard OGC Web Map Tile Service (WMTS), permitindo criar mapas interactivos na web, que funcionam de uma forma eficiente.</p>
+<p>A imagem abaixo mostra um exemplo de uma aplicação de web que produz um mapa interactivo do tema "crus", a partir de um endpoint de OGC AP - Tiles. O código completo pode ser consultado <a href="https://github.com/emotional-cities/vtiles-example.git">aqui</a>.</p>
+<p><img alt="Aplicação de web com vector tiles" src="../img/vtiles-dgt.png" /></p>
+</div>
+<p>Os temas CRUS e COS foram sub divididos em sub-temas, com base no municipio, resultando em 278 colecções cada.</p>
+<p>A CAOP está dividida em 8 colecções, uma para cada unidade admninistrativa (<a href="https://ogcapi.dgterritorio.gov.pt/collections/municipios">Municípios</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/freguesias">Freguesias</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/area_administrativa">Áreas administrativas</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/nuts1">NUTSI</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/nuts2">NUTSII</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/nuts3">NUTSIII</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/trocos">Troços</a>, <a href="https://ogcapi.dgterritorio.gov.pt/collections/distritos">Distritos</a>).</p>
+<p>De acordo com <em>OGC API - Common - Part 2</em> o endpoint de <em>collection</em> (colecção) contém toda a informação necessária sobre essa colecção, incluindo os links para aceder aos dados e metadados. Por exemplo, para obter os <em>metadados de colecção</em> da colecção <code>crus_abrantes</code>: </p>
 <p><a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes">https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes</a></p>
 <p>A partir de aqui, é possível obter os dados em formato OGC API - Features, ou navegar até ao endpoint de tiles:</p>
 <ul>
 <li><a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items">https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items</a></li>
 <li><a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/tiles">https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/tiles</a></li>
 </ul>
-<p>TODO: info box com paging</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>OGC API - Features suporta um parametro de paging, que permite receber um número pre definido de items na resposta. Por defeito, o servidor está configurado para devolver respostas com 100 items. Este limite pode ser forçado através do parâmetro <code>limit</code>, até atingir o valor máximo definido no servidor. Por exemplo, para pedir uma resposta que devolva o máximo de 200 items:</p>
+<p><a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items?limit=200">https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items?limit=200</a></p>
+</div>
 <h2 id="crs-suportados">CRS Suportados</h2>
 <p>Este serviço publica os dados vectoriais em cinco <em>Coordinate Reference Systems (CRS)</em>, ou Sistemas de Referência de Coordenadas:</p>
 <ul>
