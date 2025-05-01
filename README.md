@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# ogcapi-user
-Manual de utilizador das OGCAPI da DGT
-=======
 # README
 
 This site creates the user documentation for the OGC API SDI, at DGT. Docs are built using [mkdocs](https://www.mkdocs.org/).
@@ -19,4 +15,3 @@ The site is live at: https://byteroad.github.io/ogcapi-user/
 ## License
 
 Licensed using [MIT](./LICENSE).
->>>>>>> master
