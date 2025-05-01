@@ -1,0 +1,23 @@
+site_name: Manual de Utilização
+site_description: "Manual de Utilização da Infra Estrutura de Dados OGC API, da DGT."
+site_author: ByteRoad
+copyright: "&copy; 2025 DGT"
+site_url: https://byteroad.github.io/ogcapi-user/
+
+
+nav:
+  - Início: index.md
+  - Descrição do Sistema: descricao.md
+  - Acesso desde o QGIS: clientes.md
+  - Perguntas Frequentes: perguntas.md
+  - Referências e Recursos de Aprendizagem: recursos.md
+  - Contribuir para este Manual: contribuir.md
+
+theme: readthedocs
+
+plugins:
+    - search
+
+markdown_extensions:
+  - admonition
+  - meta # option to add some meta tags on top, title, author, date, etc
