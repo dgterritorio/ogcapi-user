@@ -10,7 +10,7 @@ Deploy using
 
 `mkdocs gh-deploy`
 
-The site is live at: https://byteroad.github.io/ogcapi-user/
+The site is live at: https://dgterritorio.github.io/
 
 ## License
 
