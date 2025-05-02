@@ -2,7 +2,7 @@ site_name: Manual de Utilização
 site_description: "Manual de Utilização da Infra Estrutura de Dados OGC API, da DGT."
 site_author: ByteRoad
 copyright: "&copy; 2025 DGT"
-site_url: https://byteroad.github.io/ogcapi-user/
+site_url: https://dgterritorio.github.io/ogcapi-user/
 
 
 nav:
