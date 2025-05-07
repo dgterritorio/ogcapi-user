@@ -12,6 +12,19 @@ Deploy using
 
 The site is live at: https://dgterritorio.github.io/
 
+## Export PDF
+
+Install `with-pdf` plugin:
+
+`pip install mkdocs-with-pdf`
+
+Build:
+
+`mkdocs build`
+
+PDF is generated at `site/pdf/`.
+
+
 ## License
 
 Licensed using [MIT](./LICENSE).
