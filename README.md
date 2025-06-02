@@ -10,7 +10,7 @@ Deploy using
 
 `mkdocs gh-deploy`
 
-The site is live at: https://dgterritorio.github.io/
+The site is live at: https://dgterritorio.github.io/ogcapi-user/
 
 ## Export PDF
 
