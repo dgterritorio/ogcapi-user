@@ -87,28 +87,27 @@
 <p class="admonition-title">Question</p>
 <p><em>Porque é que a representação HTML da OGC API - DGT está em inglês?</em></p>
 <p>A OGC API da DGT suporta português e inglês, de acordo com a preferência do cliente. A pygeoapi segue um mecanismo Standard de HTTP, que procura satisfazer o header <a href="https://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z12"><code>Accept-Language</code></a> do pedido enviado pelo cliente. No caso de aceder á API através de um browser verifique se a língua que tem pre-definida é o inglês, o que explicaria obter uma resposta em inglês. </p>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>A pygeoapi permite forçar a resposta uma determinada língua, através do parâmetro <code>lang</code>. Por exemplo para obter uma resposta em português, independentemente da língua do cliente:</p>
 <p><a href="https://ogcapi.dgterritorio.gov.pt/?lang=pt">https://ogcapi.dgterritorio.gov.pt/?lang=pt</a></p>
 </div>
+</div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p><em>A <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">página de colecções da OGC API da DGT</a> tem centenas de entradas. Como posso filtra-las para encontrar uma entrada específica, por exemplo <code>caop</code>?</em></p>
 <p>A OGC API da DGT é uma API, desenhada para ser consumida por uma aplicação cliente (como o QGIS). A representação HTML dos endpoints é apenas um exemplo, que permite uma visualização mais simpática que um documento em JSON, mas não apresenta funcionalidades como pesquisas.</p>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Ao <a href="../clientes/#ogc-api-features">criar uma ligação no QGIS com o endpoint da OGC API - Features</a>, é possível filtrar as colecções no servidor usando uma string (por exemplo <code>caop</code>).</p>
 <p><img alt="Filtro OAF" src="../img/filtro-oaf.png"/></p>
+</div>
 </div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p><em>Sei que esta colecção tem mais de um milhão de registos, mas quando acedo aos dados através do endpoint de OGC API - Features só me aparecem 100. Porquê esta diferença?</em></p>
 <p><img alt="Colecção com limite de items" src="../img/paging.png"/></p>
 <p>A OGC API usa um mecanismo de paging para evitar sobrecarregar o servidor e o cliente com muitos items. Por defeito, este serviço está configurado para servir 100 items de cada vez. </p>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>O número de items devolvidos pela OGC API - Features pode ser forçado através do parâmetro <code>limit</code>, até chegar ao limite configurado para o servidor. Por exemplo:</p>
@@ -119,11 +118,11 @@
 <p>No caso de o <code>limit</code> ultrapassar o limite do servidor, não será apresentado nenhum erro, mas o número máximo de items permitidos será devolvido na resposta.</p>
 <p>Mais detalhes sobre o parâmetro <code>limit</code>, incluindo uma explicação de como obter links para navegar através das colecções usando paging, podem ser consultados <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_combinations_of_filter_parameters">nesta secção do Standard</a>.</p>
 </div>
+</div>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p><em>A resposta do serviço OGC API - Features é muito lenta no meu cliente (por exemplo QGIS). Porquê?</em></p>
 <p>As aplicações clientes podem estar a fazer outras operações quando estão a aceder aos items, como por exemplo fazer o rendering da visualização ou criar um cache. Estas operações podem afectar o tempo que o utilizador espera por uma resposta.</p>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Para avaliar o tempo real que a OGC API da DGT demora a responder, recomenda-se um processo mais directo de download, como por exemplo usando <a href="https://curl.se/">curl</a> ou <a href="https://www.gnu.org/software/wget/">wget</a> na linha de comandos.</p>
@@ -138,6 +137,31 @@ Saving to: ‘items?f=json&amp;limit=5000’
 items?f=json&amp;limit= 100%[===================&gt;]  57,88M  4,72MB/s    in 12s     
 2025-04-25 21:35:36 (4,64 MB/s) - ‘items?f=json&amp;limit=5000’ saved [60693514/60693514]
 </code></pre>
+</div>
+<p>Para melhorar o acesso a dados vectoriais, leia também a pergunta seguinte.    </p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><em>Qual é a melhor forma de aceder a coleções vectoriais no QGIS?</em></p>
+<p>OGC API - Features está desenhada para permitir pesquisas (e.g.: bounding box, palavra chave, etc), devolvendo apenas a parte dos dados que nos interessa. Se estamos a pedir a totalidade dos dados para efeitos de visualização, a recomendação é usar OGC API - Tiles, que foram desenhadas especificamente para esse propósito e proporcionam uma melhor experiência de navegação (e.g.: zoomin, panning).  </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As tiles vectoriais retém o acesso aos atributos, permitindo interrogar partes do mapa com a função ’identify’.</p>
+<p><img alt="OAT 5" src="../img/oat5.png"/></p>
+</div>
+<p>No caso de realmente não estarmos interessados na totalidade dos dados, mas apenas uma parte, a recomendação é estabelecer esse filtro antes de aceder á colecção. </p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>No exemplo abaixo, mostra-se um pedido da coleção "SRUP - Reserva Ecológica Nacional - Áreas", filtrada pela área de interesse.</p>
+<p><img alt="OAF 9" src="../img/oaf9.png"/></p>
+<p><img alt="OAF 10" src="../img/oaf10.png"/></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+</div>
+<p>O diagrama abaixo descreve o processo de avaliação de acesso a colecções vectoriais.</p>
+<p><img alt="oaf-workflow1" src="../img/oaf-workflow1.png"/></p>
+<p>Salvo nos caso de colecções que já sabemos de antemão serem muito pequenas, a recomendação é nunca carregar colecções do tipo OGC API - Features sem filtros. Para explorar os dados, e visualizar-los, deve usar-se OGC API - Tiles.</p>
 </div>
 </div>
 </div><footer>

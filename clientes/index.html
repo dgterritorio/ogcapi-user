@@ -52,6 +52,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ogc-api-maps">OGC API - Maps</a>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#ogc-api-records">OGC API - Records</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -98,11 +100,20 @@
 <h2 id="ogc-api-features">OGC API - Features</h2>
 <p>Para adicionar um layer do tipo "OGC API - Features", pode ser utilizado o browser do lado esquerdo, carregando no item "WFS/OGC API - Features" para chamar o context menu, e escolhendo "Nova Ligação". </p>
 <p><img alt="OAF 1" src="../img/oaf1.png"/></p>
-<p>No passo seguinte, é aberta uma caixa de configuração para introduzir os dados da ligação. Na secção <code>url</code> deve ser introduzido o url da Landing Page da OGC API: <a href="https://ogcapi.dgterritorio.gov.pt/">https://ogcapi.dgterritorio.gov.pt/</a>. As opcões de WFS são facultativas.</p>
+<p>No passo seguinte, é aberta uma caixa de configuração para introduzir os dados da ligação. Na secção <code>url</code> deve ser introduzido o url da Landing Page da OGC API: <a href="https://ogcapi.dgterritorio.gov.pt/">https://ogcapi.dgterritorio.gov.pt/</a>.</p>
 <p><img alt="OAF 2" src="../img/oaf2.png"/></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Opcões de WFS: para não sobrecarregar o QGIS e o servidor, recomenda-se estabelecer um número máximo de features, especialmente numa fase de exploração dos dados. Esse número pode ser sempre incrementado, se necessário. Para um número máximo de features de <code>100</code>, com uma paginação de <code>25</code>, o QGIS fará quatro pedidos ao servidor até satisfazer a quota máxima estabelecida de features; neste caso, 100.</p>
+</div>
 <p>Ao pressionar <code>ok</code> para fechar a caixa anterior, uma nova ligação aparecerá listada debaixo da secção "WFS/OGC API - Features", no browser panel. Ao carregar nesse item para expandir-lo irão aparecer todas as colecções de OGC API - Features, disponíveis no servidor.</p>
 <p><img alt="OAF 6" src="../img/oaf6.png"/></p>
 <p>Qualquer uma destas colecções pode ser adicionada ao QGIS como layer, fazendo duplo click, ou carregando nela para chamar o menu de contexto e escolhendo "Add layer to project".</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para não sobrecarregar o QGIS e o servidor, recomenda-se aplicar filtros a coleções OGC API - Features <strong>antes de carregar a colecção</strong>. No caso de quereremos filtrar por um determinado atributo, podemos carregar no botão <code>build query</code> para construir o filtro. Se tivermos interesse por uma determinada área, a recomendação é de fazer zoom para a área de interesse <strong>antes de carregar a colecção</strong> e seleccionar a checkbox "Only select features overlaping the view extent". </p>
+<p><img alt="OAF 7" src="../img/oaf7.png"/></p>
+</div>
 <p><img alt="OAF 4" src="../img/oaf4.png"/></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -115,10 +126,9 @@
 <p>Na caixa de configuração deve-se indicar qual é o "source url" da colecção.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Para obter "source url" da colecção pode-se consultar o endpoint de tileset metadata. Depois de identificar a colecção de interesse, através do <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">endpoint de colecções</a>, carregar nessa colecção para obter a página da colecção. Por exemplo, se quiseremos os metadados de colecção de "CRUS ABRANTES", podemos carregar nesse link que nos leva até: <a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes">https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes</a>. A última parte do url - <code>crus_abrantes</code>- é o nome da colecção.</p>
-<p>Para aceder ao tileset metadata, podemos substituir o <code>NOME</code> neste url, por <code>crus_abrantes</code>:</p>
-<p><a href="https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/tiles/WebMercatorQuad/metadata">https://ogcapi.dgterritorio.gov.pt/collections/NOME/tiles/WebMercatorQuad/metadata</a></p>
-<p><img alt="OAT 3" src="../img/oat3.png"/></p>
+<p>Para obter "source url" da colecção pode-se consultar o endpoint de tileset metadata. Depois de identificar a colecção de interesse, através do <a href="https://ogcapi.dgterritorio.gov.pt/collections">endpoint de colecções</a>, carregar nessa colecção para obter a página da colecção. Por exemplo, se quiseremos os metadados de colecção de "CAOP2025 Municípios", podemos carregar nesse link que nos leva até: <a href="https://ogcapi.dgterritorio.gov.pt/collections/municipios">https://ogcapi.dgterritorio.gov.pt/collections/municipios</a>. A última parte do url - <code>municipios</code>- é o nome da colecção.</p>
+<p>Para aceder ao tileset metadata, podemos substituir o <code>NOME</code> neste url, por <code>municipios</code>:</p>
+<p><a href="https://ogcapi.dgterritorio.gov.pt/collections/municipios/tiles/WebMercatorQuad/metadata">https://ogcapi.dgterritorio.gov.pt/collections/NOME/tiles/WebMercatorQuad/metadata</a></p>
 <p>Acedendo a url podemos consultar o Tile URL template. </p>
 <p><img alt="OAT 1" src="../img/oat1.png"/></p>
 <p>Podemos copiar este valor para o "source url" do QGIS, substituindo <code>tileMatrix</code> por <code>z</code>, <code>tileRow</code> por <code>y</code> e <code>tileCol</code> por <code>x</code>: </p>
@@ -127,8 +137,7 @@
 <p>Depois de aceitar esta configuração, a colecção irá aparecer listada debaixo do item "Vector Tiles". Ela pode ser adicionada ao mapa, carregando para obter o context menu, e depois seleccionando "Add layer to project".</p>
 <p><img alt="OAT 4" src="../img/oat4.png"/></p>
 <h2 id="ogc-api-maps">OGC API - Maps</h2>
-<p>A infraestrutura OGC API da DGT disponibiliza duas colecções como OGC API - Maps:
-"OrtoSat 30 cm - Portugal Continental - 2023": Cor Verdadeira e Cor Falsa. Para acceder a qualquer uma destas colecções, começamos por identificar o endpoint da colecção através do <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">endpoint de colecções</a>. Por exemplo para o tema "Cor Verdadeira":</p>
+<p>Para acceder a colecções disponibilizadas como OGC API - Maps, começamos por identificar o endpoint da colecção através do <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">endpoint de colecções</a>. Por exemplo para o tema "OrtoSat 30 cm - Portugal Continental - 2023 (Cor Verdadeira)":</p>
 <ul>
 <li><a href="https://ogcapi.dgterritorio.gov.pt/collections/ortos-rgb">https://ogcapi.dgterritorio.gov.pt/collections/ortos-rgb</a></li>
 </ul>
@@ -138,6 +147,22 @@
 <p><img alt="OAM 2" src="../img/oam2.png"/></p>
 <p>Na secção "OGC API - endpoint", deve-se preencher o url da colecção que identificámos acima e na <code>API</code>, escolher <code>map</code>. Todas as outras configurações são opcionais. Depois de aceitar esta configuração, a colecção será adicionada ao mapa.</p>
 <p><img alt="OAM 3" src="../img/oam3.png"/></p>
+<h2 id="ogc-api-records">OGC API - Records</h2>
+<p>Actualmente a DGT disponibliza duas colecções como OGC API - Records: o "Sistema Nacional de Informação Geográfica - SNIG" e o "Portal de Informação Territorial - PoInT". Os respectivos endpoints podem ser identificados <a href="https://ogcapi.dgterritorio.gov.pt/collections">endpoint de colecções</a>.</p>
+<p>Para visualizar uma coleção OGC API - Records no QGIS, podemos utilizar o core plugin <a href="https://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_metasearch.html">MetaSearch</a>, que já vem por defeito com a instalação do QGIS. É possível aceder ao plugin, através da opção "Web-&gt;MetaSearch-&gt;MetaSearch" no top level menu.</p>
+<p><img alt="OAREC 1" src="../img/oarec1.png"/></p>
+<p>Carregar no botão <code>new</code> para adicionar um novo endpoint de Records, e na caixa de configuração, adicionar o url que identificámos na página de colecções.</p>
+<p><img alt="OAREC 2" src="../img/oarec2.png"/></p>
+<p>Ao pressionar <code>Ok</code>, este endpoint será adicionado á lista, e podemos carregar no botão <code>service info</code>, para obter informações sobre este serviço.</p>
+<p><img alt="OAREC 3" src="../img/oarec3.png"/></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>O QGIS poderá demorar algum tempo a fazer a comunicação, e perguntar ao utilizador se que esperar ou interromper o processo; para continuar, escolha esperar.</p>
+</div>
+<p>Na tab <code>search</code> temos a possibilidade de listar os registos do catálogo e aplicar filtros, por bounding box ou palavra chave.</p>
+<p><img alt="OAREC 4" src="../img/oarec4.png"/></p>
+<p>Carregue num registo para visualizar o seu conteúdo.</p>
+<p><img alt="OAREC 5" src="../img/oarec5.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
