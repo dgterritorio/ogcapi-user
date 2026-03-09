@@ -55,20 +55,19 @@ Os Standards OGC API oferecem diferentes formatos através de um mecanismo de [n
 
 ## Colecções Publicadas
 
-A DGT disponibliza 569 colecções em OGC API.
+A DGT disponibliza mais de setenta colecções em OGC API.
 
-As colecções "OrtoSat 30 cm - Portugal Continental - 2023" ([Cor Verdadeira](https://ogcapi.dgterritorio.gov.pt/collections/ortos-rgb) e [Cor Falsa](https://ogcapi.dgterritorio.gov.pt/collections/ortos-irg)) estão publicadas como [OGC API - Maps](https://docs.ogc.org/is/20-058/20-058.html). 
+As colecções "OrtoSat 30 cm - Portugal Continental", "Ortofotos 25 cm e 50 cm - Portugal Continental" e "Mosaico composto por imagens Sentinel-2 de Portugal continental com resolução de 10 m", em versões de cor verdadeira e falsa cor, assim como a "Carta de Ocupação do Solo Conjuntural" e "Modelo do Geóide - GeodPT08 (Continente)", estão publicadas como [OGC API - Maps](https://docs.ogc.org/is/20-058/20-058.html). 
 
 !!! info
     
     OGC API - Maps segue as pegadas do Web Map Service (WMS) da OGC, possibilitando ás aplicações clientes pedir mapas com informação geospacial na web, usando parâmetros específicos (bounding box, crs, etc).
 
-
-O [Cadastro Predial](https://ogcapi.dgterritorio.gov.pt/collections/cadastro), a [Carta do Regime de Uso do Solo (CRUS)](https://ogcapi.dgterritorio.gov.pt/collections/crus), a [Carta de Uso e Ocupação do Solo (COS)](https://ogcapi.dgterritorio.gov.pt/collections/cos) e a Carta Administrativa Oficial de Portugal (CAOP) estão publicadas como [OGC API - Features](https://github.com/opengeospatial/ogcapi-features) e [OGC API - Tiles](https://github.com/opengeospatial/ogcapi-tiles). As tiles disponibilizadas são vectoriais usando o formato [Vector Tile da Mapbox](https://github.com/mapbox/vector-tile-spec).
+O "Cadastro Predial", "Carta do Regime de Uso do Solo (CRUS)", "Carta de Uso e Ocupação do Solo (COS)", "Carta Administrativa Oficial de Portugal (CAOP)" e as colecções de "Servidão e Restrição de Utilidade Pública (SRUP)" estão publicadas como [OGC API - Features](https://docs.ogc.org/is/17-069r3/17-069r3.html) e [OGC API - Tiles](https://docs.ogc.org/is/20-057/20-057.html). As tiles disponibilizadas são vectoriais usando o formato [Vector Tile da Mapbox](https://github.com/mapbox/vector-tile-spec).
 
 !!! info
     
-    [OGC API - Features](https://features.developer.ogc.org/) permite interrogar dados vectoriais na web, independentemente da forma como estes estão armazenados (ficheiro, base de dados SQL, base de dados NoSQL).
+    [OGC API - Features](https://features.developer.ogc.org/) permite obter dados vectoriais na web, independentemente da forma como estes estão armazenados (ficheiro, base de dados SQL, base de dados NoSQL).
 
 !!! info
     
@@ -78,10 +77,11 @@ O [Cadastro Predial](https://ogcapi.dgterritorio.gov.pt/collections/cadastro), a
 
     ![Aplicação de web com vector tiles](img/vtiles-dgt.png)
 
+As colecções "Sistema Nacional de Informação Geográfica (SNIG)" e "Portal de Informação Territorial (PoInT)" estão publicadas como [OGC API - Records](https://docs.ogc.org/is/20-004r1/20-004r1.html).
 
-Os temas CRUS e COS foram sub divididos em sub-temas, com base no municipio, resultando em 278 colecções cada.
+!!! info
 
-A CAOP está dividida em 8 colecções, uma para cada unidade admninistrativa ([Municípios](https://ogcapi.dgterritorio.gov.pt/collections/municipios), [Freguesias](https://ogcapi.dgterritorio.gov.pt/collections/freguesias), [Áreas administrativas](https://ogcapi.dgterritorio.gov.pt/collections/area_administrativa), [NUTSI](https://ogcapi.dgterritorio.gov.pt/collections/nuts1), [NUTSII](https://ogcapi.dgterritorio.gov.pt/collections/nuts2), [NUTSIII](https://ogcapi.dgterritorio.gov.pt/collections/nuts3), [Troços](https://ogcapi.dgterritorio.gov.pt/collections/trocos), [Distritos](https://ogcapi.dgterritorio.gov.pt/collections/distritos)).
+    [OGC API - Records](https://records.developer.ogc.org/) permite a descoberta e acesso a metadados sobre recursos geospaciais.
 
 De acordo com *OGC API - Common - Part 2* o endpoint de *collection* (colecção) contém toda a informação necessária sobre essa colecção, incluindo os links para aceder aos dados e metadados. Por exemplo, para obter os *metadados de colecção* da colecção `crus_abrantes`: 
 
