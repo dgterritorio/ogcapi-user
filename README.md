@@ -17,11 +17,7 @@ mkdocs build
 mkdocs serve
 ```
 
-Deploy using
-
-`mkdocs gh-deploy`
-
-The site is live at: https://dgterritorio.github.io/ogcapi-user/
+The site will be automatically deployed through a [GitHub action](https://github.com/dgterritorio/ogcapi-user/blob/main/.github/workflows/main.yml).It is live at: https://dgterritorio.github.io/ogcapi-user/
 
 ## License
 
