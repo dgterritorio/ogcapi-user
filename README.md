@@ -1,29 +1,27 @@
 # README
 
-This site creates the user documentation for the OGC API SDI, at DGT. Docs are built using [mkdocs](https://www.mkdocs.org/).
+This site creates the user documentation (in HTML and pdf) for the OGC API SDI, at DGT. Docs are built using [mkdocs](https://www.mkdocs.org/). *Note: To avoid breaking changes, we must stay on [mkdocs < 2.0](https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/).*
 
 Build using:
 
-`mkdocs serve `
+```bash
+# build a virtual Python environment in isolation
+python3 -m venv .
+. bin/activate
+git clone https://github.com/dgterritorio/ogcapi-user.git
+cd ogcapi-user
+# install required dependencies
+pip3 install -r requirements.txt
+# build step generates a pdf at site/pdf
+mkdocs build
+mkdocs serve
+```
 
 Deploy using
 
 `mkdocs gh-deploy`
 
 The site is live at: https://dgterritorio.github.io/ogcapi-user/
-
-## Export PDF
-
-Install `with-pdf` plugin:
-
-`pip install mkdocs-with-pdf`
-
-Build:
-
-`mkdocs build`
-
-PDF is generated at `site/pdf/`.
-
 
 ## License
 
