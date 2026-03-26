@@ -63,11 +63,11 @@ As colecções "OrtoSat 30 cm - Portugal Continental", "Ortofotos 25 cm e 50 cm 
     
     OGC API - Maps segue as pegadas do Web Map Service (WMS) da OGC, possibilitando ás aplicações clientes pedir mapas com informação geospacial na web, usando parâmetros específicos (bounding box, crs, etc).
 
-O "Cadastro Predial", "Carta do Regime de Uso do Solo (CRUS)", "Carta de Uso e Ocupação do Solo (COS)", "Carta Administrativa Oficial de Portugal (CAOP)" e as colecções de "Servidão e Restrição de Utilidade Pública (SRUP)" estão publicadas como [OGC API - Features](https://docs.ogc.org/is/17-069r3/17-069r3.html) e [OGC API - Tiles](https://docs.ogc.org/is/20-057/20-057.html). As tiles disponibilizadas são vectoriais usando o formato [Vector Tile da Mapbox](https://github.com/mapbox/vector-tile-spec).
+O "Cadastro Predial", "Carta do Regime de Uso do Solo (CRUS)", "Carta de Uso e Ocupação do Solo (COS)", "Carta Administrativa Oficial de Portugal (CAOP)" e as colecções de "Servidão e Restrição de Utilidade Pública (SRUP)" estão publicadas como [OGC API - Features](https://docs.ogc.org/is/17-069r3/17-069r3.html) e [OGC API - Tiles](https://docs.ogc.org/is/20-057/20-057.html). As tiles disponibilizadas são vetoriais usando o formato [Vector Tile da Mapbox](https://github.com/mapbox/vector-tile-spec).
 
 !!! info
     
-    [OGC API - Features](https://features.developer.ogc.org/) permite obter dados vectoriais na web, independentemente da forma como estes estão armazenados (ficheiro, base de dados SQL, base de dados NoSQL).
+    [OGC API - Features](https://features.developer.ogc.org/) permite obter dados vetoriais na web, independentemente da forma como estes estão armazenados (ficheiro, base de dados SQL, base de dados NoSQL).
 
 !!! info
     
@@ -100,7 +100,7 @@ A partir de aqui, é possível obter os dados em formato OGC API - Features, ou 
 
 ## CRS Suportados
 
-Este serviço publica os dados vectoriais em cinco *Coordinate Reference Systems (CRS)*, ou Sistemas de Referência de Coordenadas:
+Este serviço publica os dados vetoriais em cinco *Coordinate Reference Systems (CRS)*, ou Sistemas de Referência de Coordenadas:
 
 * [http://www.opengis.net/def/crs/OGC/1.3/CRS84](http://www.opengis.net/def/crs/OGC/1.3/CRS84)
 * [http://www.opengis.net/def/crs/EPSG/0/4326](http://www.opengis.net/def/crs/EPSG/0/4326)

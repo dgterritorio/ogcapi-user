@@ -46,7 +46,7 @@ Qualquer uma destas colecções pode ser adicionada ao QGIS como layer, fazendo 
 
 ## OGC API - Tiles
 
-O QGIS permite adicionar tiles vectoriais com o formato OGC API - Tiles. No browser panel do lado esquerdo, carregar no item "Vector Tiles" para chamar o context menu e seleccionar "New generic connection".
+O QGIS permite adicionar tiles vetoriais com o formato OGC API - Tiles. No browser panel do lado esquerdo, carregar no item "Vector Tiles" para chamar o context menu e seleccionar "New generic connection".
 
 ![OAT 3](img/oat3.png)
 
