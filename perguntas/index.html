@@ -50,6 +50,22 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current" href="#">Perguntas Frequentes</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#localizacao">Localização</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#filtrar-colecoes">Filtrar Coleções</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#paginacao">Paginação</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#velocidade-de-acesso">Velocidade de Acesso</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#acesso-eficiente-a-dados-vetoriais">Acesso Eficiente a Dados Vetoriais</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizacao-de-colecoes-de-mapas">Visualização de Coleções de Mapas</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualizacao-de-colecoes-de-tiles">Visualização de Coleções de Tiles</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#crs-da-colecao">CRS da Coleção</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -83,6 +99,7 @@
 <div class="section" itemprop="articleBody">
 <h1 id="perguntas-frequentes">Perguntas Frequentes</h1>
 <p>Esta secção compila alguns problemas comuns que podem surgir, e as soluções identificadas. Caso identifiquem outros problemas/soluções que mereçam a pena ser adicionados ou actualizados, podem contribuir utilizando os mecanismos identificados <a href="../contribuir/">nesta secção</a>.</p>
+<h2 id="localizacao">Localização</h2>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p><em>Porque é que a representação HTML da OGC API - DGT está em inglês?</em></p>
@@ -93,9 +110,10 @@
 <p><a href="https://ogcapi.dgterritorio.gov.pt/?lang=pt">https://ogcapi.dgterritorio.gov.pt/?lang=pt</a></p>
 </div>
 </div>
+<h2 id="filtrar-colecoes">Filtrar Coleções</h2>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p><em>A <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">página de colecções da OGC API da DGT</a> tem centenas de entradas. Como posso filtra-las para encontrar uma entrada específica, por exemplo <code>caop</code>?</em></p>
+<p><em>A <a href="https://ogcapi.dgterritorio.gov.pt/collections?f=html">página de colecções da OGC API da DGT</a> tem dezenas de entradas. Como posso filtra-las para encontrar uma entrada específica, por exemplo <code>caop</code>?</em></p>
 <p>A OGC API da DGT é uma API, desenhada para ser consumida por uma aplicação cliente (como o QGIS). A representação HTML dos endpoints é apenas um exemplo, que permite uma visualização mais simpática que um documento em JSON, mas não apresenta funcionalidades como pesquisas.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -103,6 +121,7 @@
 <p><img alt="Filtro OAF" src="../img/filtro-oaf.png"/></p>
 </div>
 </div>
+<h2 id="paginacao">Paginação</h2>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p><em>Sei que esta colecção tem mais de um milhão de registos, mas quando acedo aos dados através do endpoint de OGC API - Features só me aparecem 100. Porquê esta diferença?</em></p>
@@ -119,6 +138,7 @@
 <p>Mais detalhes sobre o parâmetro <code>limit</code>, incluindo uma explicação de como obter links para navegar através das colecções usando paging, podem ser consultados <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_combinations_of_filter_parameters">nesta secção do Standard</a>.</p>
 </div>
 </div>
+<h2 id="velocidade-de-acesso">Velocidade de Acesso</h2>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <p><em>A resposta do serviço OGC API - Features é muito lenta no meu cliente (por exemplo QGIS). Porquê?</em></p>
@@ -138,15 +158,16 @@ items?f=json&amp;limit= 100%[===================&gt;]  57,88M  4,72MB/s    in 12
 2025-04-25 21:35:36 (4,64 MB/s) - ‘items?f=json&amp;limit=5000’ saved [60693514/60693514]
 </code></pre>
 </div>
-<p>Para melhorar o acesso a dados vectoriais, leia também a pergunta seguinte.    </p>
+<p>Para melhorar o acesso a dados vetoriais, leia também a <a href="#acesso-eficiente-a-dados-vetoriais">pergunta seguinte</a>.    </p>
 </div>
+<h2 id="acesso-eficiente-a-dados-vetoriais">Acesso Eficiente a Dados Vetoriais</h2>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p><em>Qual é a melhor forma de aceder a coleções vectoriais no QGIS?</em></p>
+<p><em>Qual é a melhor forma de aceder a coleções vetoriais no QGIS?</em></p>
 <p>OGC API - Features está desenhada para permitir pesquisas (e.g.: bounding box, palavra chave, etc), devolvendo apenas a parte dos dados que nos interessa. Se estamos a pedir a totalidade dos dados para efeitos de visualização, a recomendação é usar OGC API - Tiles, que foram desenhadas especificamente para esse propósito e proporcionam uma melhor experiência de navegação (e.g.: zoomin, panning).  </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>As tiles vectoriais retém o acesso aos atributos, permitindo interrogar partes do mapa com a função ’identify’.</p>
+<p>As tiles vetoriais retém o acesso aos atributos, permitindo interrogar partes do mapa com a função ’identify’.</p>
 <p><img alt="OAT 5" src="../img/oat5.png"/></p>
 </div>
 <p>No caso de realmente não estarmos interessados na totalidade dos dados, mas apenas uma parte, a recomendação é estabelecer esse filtro antes de aceder á colecção. </p>
@@ -159,9 +180,49 @@ items?f=json&amp;limit= 100%[===================&gt;]  57,88M  4,72MB/s    in 12
 <div class="admonition abstract">
 <p class="admonition-title">Abstract</p>
 </div>
-<p>O diagrama abaixo descreve o processo de avaliação de acesso a colecções vectoriais.</p>
+<p>O diagrama abaixo descreve o processo de avaliação do acesso a colecções vetoriais.</p>
 <p><img alt="oaf-workflow1" src="../img/oaf-workflow1.png"/></p>
 <p>Salvo nos caso de colecções que já sabemos de antemão serem muito pequenas, a recomendação é nunca carregar colecções do tipo OGC API - Features sem filtros. Para explorar os dados, e visualizar-los, deve usar-se OGC API - Tiles.</p>
+</div>
+<h2 id="visualizacao-de-colecoes-de-mapas">Visualização de Coleções de Mapas</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><em>Esta coleção do tipo OGC API - Maps não parece apresentar dados. Porquê?</em></p>
+<p>Algumas coleções do tipo OGC API - Maps apresentam dados muito detalhados (por exemplo pixel de 25cm), que só são visíveis numa escala grande. Se fôr este o caso, experimente a fazer zoom in no cliente, até começarem a aparecer dados.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>No exemplo abaixo, mostra-se o mapa interativo no <a href="https://ogcapi.dgterritorio.gov.pt/collections/ortos2018-rgb">endpoint da coleção "Ortofotos 25 cm - Portugal Continental - 2018 - (Cor Verdadeira)"</a>. Na primeira imagem, o mapa é apresentado à escala de defeito, que mostra todo o país, e não são apresentados dados; na segunda imagem, foi feito zoom in até uma escala mais pequena e já apresentados dados.</p>
+<p><img alt="OAM small scale" src="../img/maps-small-scale.png"/></p>
+<p><img alt="OAM large scale" src="../img/maps-large-scale.png"/></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>OGC API - Maps não tem o conceito de zoom levels; no entanto, através dos parâmetros <code>bbox</code>, <code>width</code> e <code>height</code>, é possível calcular uma escala; esta escala pode depois ser traduzida num zoom level por um cliente de mapas, como o LeafLet.</p>
+</div>
+</div>
+</div>
+<h2 id="visualizacao-de-colecoes-de-tiles">Visualização de Coleções de Tiles</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><em>Esta coleção do tipo OGC API - Tiles não parece apresentar dados. Porquê?</em></p>
+<p>As tiles só são renderizadas quando existe informação. Pode dar-se o caso de que não existe informação para o zoom level especificado, ou para aquela bounding box específica. Se fôr esse o caso, experimente a aumentar o zoom ou a navegar até outra parte do mapa, usando o pan; nalguns casos, pode mesmo ser necessária uma combinação dos dois (zoom + pan).</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>No exemplo abaixo, mostra-se o mapa interativo no <a href="https://ogcapi.dgterritorio.gov.pt/collections/srup_marcos_geod/tiles">endpoint da coleção "SRUP - Marcos Geodésicos"</a>. Na primeira imagem, o mapa é apresentado à escala de defeito, que mostra todo o país, e não são apresentados dados; na segunda imagem, foi feito zoom até ao nível 7 e já apresentados dados.</p>
+<p><img alt="OAT Z6" src="../img/tiles-zoom-6.png"/></p>
+<p><img alt="OAT Z7" src="../img/tiles-zoom-7.png"/></p>
+<p>Já no caso da coleção <a href="https://ogcapi.dgterritorio.gov.pt/collections/srup_arvores_areal/tiles">"SRUP - Árvores de Interesse Público - Áreas"</a>, há informação apenas nalgumas partes pontuais do mapa. Por exemplo se fizermos zoom para a região do Luso, vamos encontrar uma área.</p>
+<p><img alt="Arvores de interesse publico" src="../img/arvores.png"/></p>
+</div>
+</div>
+<h2 id="crs-da-colecao">CRS da Coleção</h2>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p><em>Qual é o CRS (Coordinate Reference System) da coleção?</em></p>
+<p>O CRS é sempre apresentado na página da coleção. No caso de coleções do tipo OGC API - Features, são suportados múltiplos CRS (ver <a href="https://dgterritorio.github.io/ogcapi-user/descricao/#crs-suportados">"CRS Suportados"</a>). No caso de coleções do tipo OGC API - Tiles, o Tile Matrix Set (CRS usado para renderizar as tiles) é apresentado no endpoint de tiles (por exemplo: <a href="https://ogcapi.dgterritorio.gov.pt/collections/cadastro/tiles">aqui</a>); todas as tiles vetoriais são publicadas usando <a href="https://ogcapi.dgterritorio.gov.pt/TileMatrixSets/WebMercatorQuad?f=html">Web Mercator Quad (EPS:3857)</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>No caso de OGC API - Maps, o CRS é um parâmetro do pedido; no entanto, no caso de este ser omitido o servidor pode optar por enviar um CRS de defeito. No caso das coleções de mapas da DGT, são suportados WGS84 e WebMercator.</p>
+</div>
 </div>
 </div>
 </div><footer>
