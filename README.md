@@ -19,6 +19,8 @@ mkdocs serve
 
 The site will be automatically deployed through a [GitHub action](https://github.com/dgterritorio/ogcapi-user/blob/main/.github/workflows/main.yml).It is live at: https://dgterritorio.github.io/ogcapi-user/
 
+The pdf version of the documentation is always available [here](https://dgterritorio.github.io/ogcapi-user/pdf/document.pdf).
+
 ## License
 
 Licensed using [MIT](./LICENSE).
