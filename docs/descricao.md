@@ -83,20 +83,20 @@ As colecções "Sistema Nacional de Informação Geográfica (SNIG)" e "Portal d
 
     [OGC API - Records](https://records.developer.ogc.org/) permite a descoberta e acesso a metadados sobre recursos geospaciais.
 
-De acordo com *OGC API - Common - Part 2* o endpoint de *collection* (colecção) contém toda a informação necessária sobre essa colecção, incluindo os links para aceder aos dados e metadados. Por exemplo, para obter os *metadados de colecção* da colecção `crus_abrantes`: 
+De acordo com *OGC API - Common - Part 2* o endpoint de *collection* (colecção) contém toda a informação necessária sobre essa colecção, incluindo os links para aceder aos dados e metadados. Por exemplo, para obter os *metadados de colecção* da colecção `crus`: 
 
-[https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes](https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes)
+[https://ogcapi.dgterritorio.gov.pt/collections/crus](https://ogcapi.dgterritorio.gov.pt/collections/crus)
 
 A partir de aqui, é possível obter os dados em formato OGC API - Features, ou navegar até ao endpoint de tiles:
 
-* [https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items](https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items)
-* [https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/tiles](https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/tiles)
+* [https://ogcapi.dgterritorio.gov.pt/collections/crus/items](https://ogcapi.dgterritorio.gov.pt/collections/crus/items)
+* [https://ogcapi.dgterritorio.gov.pt/collections/crus/tiles](https://ogcapi.dgterritorio.gov.pt/collections/crus/tiles)
 
 !!! tip
     
     OGC API - Features suporta um parametro de paging, que permite receber um número pre definido de items na resposta. Por defeito, o servidor está configurado para devolver respostas com 100 items. Este limite pode ser forçado através do parâmetro `limit`, até atingir o valor máximo definido no servidor. Por exemplo, para pedir uma resposta que devolva o máximo de 200 items:
 
-    [https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items?limit=200](https://ogcapi.dgterritorio.gov.pt/collections/crus_abrantes/items?limit=200)
+    [https://ogcapi.dgterritorio.gov.pt/collections/crus/items?limit=200](https://ogcapi.dgterritorio.gov.pt/collections/crus/items?limit=200)
 
 ## CRS Suportados
 
