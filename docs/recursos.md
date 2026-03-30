@@ -17,6 +17,7 @@ Esta secção compila as referências e recursos de aprendizagem externos, refer
   * [OGC API - Features - Part 3: Filtering](https://docs.ogc.org/is/19-079r2/19-079r2.html)
   * [OGC API - Tiles - Part 1: Core](https://docs.ogc.org/is/20-057/20-057.html)
   * [OGC API - Maps - Part 1: Core](https://docs.ogc.org/is/20-058/20-058.html)
+  * [OGC API - Records](https://docs.ogc.org/is/20-004r1/20-004r1.html)
 
 ## QGIS
 
