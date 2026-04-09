@@ -13,7 +13,9 @@ nav:
   - Referências e Recursos de Aprendizagem: recursos.md
   - Contribuir para este Manual: contribuir.md
 
-theme: readthedocs
+theme:
+  name: readthedocs
+  logo: img/Logo_DGT.png
 
 plugins:
     - search
